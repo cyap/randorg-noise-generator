@@ -2,6 +2,7 @@ import requests
 import json
 
 URL = "https://api.random.org/json-rpc/1/invoke"
+HEADERS = {'User-Agent' : "cyap@slu.edu"}
 
 def make_randorg_request(method, params, url=URL):
 	data = {
