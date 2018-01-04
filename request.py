@@ -13,3 +13,8 @@ def make_randorg_request(method, params, url=URL):
 	}
 	request = requests.get(url, data=json.dumps(data), headers=HEADERS)
 	return json.loads(request.text)
+
+def check_quota():
+	return json.loads(
+		requests.get("https://www.random.org/quota/?format=plain", data=json.dumps({'format':"plain"})).text
+	)
